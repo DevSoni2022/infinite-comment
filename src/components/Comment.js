@@ -10,7 +10,7 @@ const Comment = ({
   comment,
 }) => {
   const [input, setInput] = useState("");
-  const [content,setContent] = useState("")
+  const [content, setContent] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const [expand, setExpand] = useState(false);
@@ -26,15 +26,15 @@ const Comment = ({
   };
 
   const onAddComment = () => {
-    debugger
+    debugger;
     if (editMode) {
       handleEditNode(comment.id, inputRef?.current?.innerText);
     } else {
       setExpand(true);
-      handleInsertNode(comment.id, input,content);
+      handleInsertNode(comment.id, input, content);
       setShowInput(false);
       setInput("");
-      setContent("")
+      setContent("");
     }
 
     if (editMode) setEditMode(false);
@@ -48,7 +48,7 @@ const Comment = ({
   return (
     <div>
       <div className={comment.id === 1 ? "inputContainer" : "commentContainer"}>
-        {comment.id === 1 &&<span className="heading">Comment</span>}
+        {comment.id === 1 && <span className="heading">Comment</span>}
         {comment.id === 1 ? (
           <>
             <input
@@ -59,7 +59,7 @@ const Comment = ({
               onChange={(e) => setInput(e.target.value)}
               placeholder="Name"
             />
-              <input
+            <input
               type="text"
               className="inputContainer__input second_input"
               autoFocus
@@ -76,6 +76,7 @@ const Comment = ({
           </>
         ) : (
           <>
+          <div className="name-date-container">
             <span
               contentEditable={editMode}
               suppressContentEditableWarning={editMode}
@@ -83,15 +84,12 @@ const Comment = ({
               style={{ wordWrap: "break-word" }}
               className="list-item"
             >
-             <span className="name"> 
-              {comment.name}
-              </span>
-              <span className="content">
-              {comment.content}
-              </span>
+              <span className="name">{comment.name}</span>
+              <span className="content">{comment.content}</span>
             </span>
-
-            <div style={{ display: "flex", marginTop: "5px" }}>
+            <div className="date">{comment.createdAt}</div>
+            </div>
+            <div className="" style={{ display: "flex", marginTop: "5px" }}>
               {editMode ? (
                 <>
                   <Action
@@ -166,7 +164,6 @@ const Comment = ({
         )}
 
         {comment?.items?.map((cmnt) => {
-          debugger
           return (
             <Comment
               key={cmnt.id}

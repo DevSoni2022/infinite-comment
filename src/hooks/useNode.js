@@ -1,3 +1,5 @@
+import { formatDate } from "../Utility/Utility";
+
 const useNode = () => {
     const insertNode = function (tree, commentId, item,content) {
         debugger
@@ -7,6 +9,7 @@ const useNode = () => {
           name: item,
           content:content,
           items: [],
+          createdAt :formatDate(new Date(),'new').f1
         });
   
         return tree;

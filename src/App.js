@@ -2,14 +2,15 @@ import { useState } from "react";
 import Comment from "./components/Comment";
 import useNode from "./hooks/useNode";
 import "./comments.scss";
-
+import { __localStorageGet } from "./Utility/Utility";
 const comments = {
   id: 1,
   items: [],
 };
-localStorage.setItem('comments',JSON.stringify(comments))
 const App = () => {
-  const [commentsData, setCommentsData] = useState(comments);
+  const [commentsData, setCommentsData] = useState( comments);
+
+  localStorage.setItem('comments',JSON.stringify(commentsData))
 
   const { insertNode, editNode, deleteNode } = useNode();
 

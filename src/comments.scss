@@ -28,6 +28,13 @@
     width: 300px;
     cursor: pointer;
     border-radius: 5px;
+    .name-date-container{
+        display: flex;
+        justify-content: space-between;
+        .date{
+            font-weight: 700;
+        }
+    }
     .list-item{
         display: flex;
         flex-direction: column;
