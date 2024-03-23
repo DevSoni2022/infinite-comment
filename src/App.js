@@ -1,9 +1,45 @@
-import React from 'react'
+import { useState } from "react";
+import Comment from "./components/Comment";
+import useNode from "./hooks/useNode";
+import "./comments.scss";
 
+const comments = {
+  id: 1,
+  items: [],
+};
+localStorage.setItem('comments',JSON.stringify(comments))
 const App = () => {
-  return (
-    <div>infinite comment</div>
-  )
-}
+  const [commentsData, setCommentsData] = useState(comments);
 
-export default App
+  const { insertNode, editNode, deleteNode } = useNode();
+
+  const handleInsertNode = (folderId, item,cotnent) => {
+    debugger
+    const finalStructure = insertNode(commentsData, folderId, item,cotnent);
+    setCommentsData(finalStructure);
+  };
+
+  const handleEditNode = (folderId, value) => {
+    const finalStructure = editNode(commentsData, folderId, value);
+    setCommentsData(finalStructure);
+  };
+
+  const handleDeleteNode = (folderId) => {
+    const finalStructure = deleteNode(commentsData, folderId);
+    const temp = { ...finalStructure };
+    setCommentsData(temp);
+  };
+console.log(commentsData,"#REWQR")
+  return (
+    <div className="App">
+      <Comment
+        handleInsertNode={handleInsertNode}
+        handleEditNode={handleEditNode}
+        handleDeleteNode={handleDeleteNode}
+        comment={commentsData}
+      />
+    </div>
+  );
+};
+
+export default App;

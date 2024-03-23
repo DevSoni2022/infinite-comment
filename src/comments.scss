@@ -1,0 +1,108 @@
+* {
+    font-family: Monaco, sans-serif;
+  }
+  
+  .App {
+    margin-top: 20px;
+    width: fit-content;
+
+  }
+  .inputContainer{
+    background-color: #F6F6F6;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: end;
+  }
+  
+  .commentContainer {
+    margin-top: 6px;
+    background-color: #d3d3d3e0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    width: 300px;
+    cursor: pointer;
+    border-radius: 5px;
+    .list-item{
+        display: flex;
+        flex-direction: column;
+        .name{
+            font-weight: 700;
+        }
+    }
+    .heading{
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+        padding: 5px 0px;
+        margin-top: 5px;
+        display: flex;
+        position: relative;
+        right: 50%;
+    }
+  }
+  
+  .commentContainer:hover {
+    background-color: #d3d3d3bf;
+  }
+  
+  .inputContainer {
+    display: flex;
+    text-align: left;
+    gap: 5px;
+  }
+  
+
+  
+  .inputContainer__input {
+    margin: 6px 0 0px 0;
+    padding: 5px;
+    display: flex;
+    border: 1px solid lightgray;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    border: 1px solid #e7e7e7;
+  }
+  
+  .second_input,.first_input {
+    margin: 0;
+    margin: 0;
+    width: 100%;
+    background: #FFF;
+    border: 2px;
+    outline: none;
+    border: 1px solid #e7e7e7 ;
+
+  }
+  .second_input{
+    min-height: 50px;
+  }
+  .commentContainer > span {
+    margin: 0 5px;
+  }
+  
+  .reply {
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #4e4e4e;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .comment {
+    color: #ffffff;
+    background-color: #569dff;
+
+    letter-spacing: 0.8px;
+    border-radius: 1px;
+    padding: 5px 12px;
+  }
