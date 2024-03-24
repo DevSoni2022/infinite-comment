@@ -46,7 +46,7 @@ const Comment = ({
   // console.log(comment,"#$!@#$~@")
 
   return (
-    <div>
+    <div className="Main-list">
       <div className={comment.id === 1 ? "inputContainer" : "commentContainer"}>
         {comment.id === 1 && <span className="heading">Comment</span>}
         {comment.id === 1 ? (
@@ -69,7 +69,7 @@ const Comment = ({
             />
 
             <Action
-              className="reply comment"
+              className={ input && content ? "reply comment " : "reply comment disabled"}
               type="POST"
               handleClick={onAddComment}
             />
@@ -89,7 +89,7 @@ const Comment = ({
             </span>
             <div className="date">{comment.createdAt}</div>
             </div>
-            <div className="" style={{ display: "flex", marginTop: "5px" }}>
+            <div className="cta-container" style={{ display: "flex", marginTop: "5px" }}>
               {editMode ? (
                 <>
                   <Action
@@ -118,7 +118,7 @@ const Comment = ({
                         ) : (
                           <DownArrow width="10px" height="10px" />
                         )}{" "}
-                        REPLY
+                        Reply
                       </>
                     }
                     handleClick={handleNewComment}
@@ -131,7 +131,7 @@ const Comment = ({
                     }}
                   />
                   <Action
-                    className="reply"
+                    className="delete"
                     type="DELETE"
                     handleClick={handleDelete}
                   />
@@ -142,7 +142,7 @@ const Comment = ({
         )}
       </div>
 
-      <div style={{ display: expand ? "block" : "none", paddingLeft: 25 }}>
+      <div className="List-item" style={{ display: expand ? "block" : "none", paddingLeft: 25 }}>
         {showInput && (
           <div className="inputContainer">
             <input

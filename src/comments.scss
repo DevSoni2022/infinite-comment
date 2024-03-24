@@ -21,11 +21,11 @@
   
   .commentContainer {
     margin-top: 6px;
-    background-color: #d3d3d3e0;
+    background-color: #F6F6F6;
     display: flex;
     flex-direction: column;
     padding: 5px 10px;
-    width: 300px;
+    // width: 300px;
     cursor: pointer;
     border-radius: 5px;
     .name-date-container{
@@ -34,6 +34,22 @@
         .date{
             font-weight: 700;
         }
+    }
+    .cta-container{
+      position: relative;
+      .delete{
+        position: absolute;
+        right: -16px;
+        top: -7px;
+        background: #ccc;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      }
     }
     .list-item{
         display: flex;
@@ -55,7 +71,8 @@
   }
   
   .commentContainer:hover {
-    background-color: #d3d3d3bf;
+    background-color: #F6F6F6;
+  ;
   }
   
   .inputContainer {
@@ -100,9 +117,10 @@
     font-size: 12px;
     padding: 5px;
     border-radius: 5px;
-    color: #4e4e4e;
+    color: #0094FF;
     font-weight: 600;
     cursor: pointer;
+    text-transform: uppercase;
   }
   
   .comment {
@@ -113,3 +131,7 @@
     border-radius: 1px;
     padding: 5px 12px;
   }
+ .disabled{
+  pointer-events: none;
+  opacity:  .7;
+ }
