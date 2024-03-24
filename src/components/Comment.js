@@ -28,6 +28,7 @@ const Comment = ({
   const onAddComment = () => {
     debugger;
     if (editMode) {
+      debugger
       handleEditNode(comment.id, inputRef?.current?.innerText);
     } else {
       setExpand(true);
@@ -150,6 +151,12 @@ const Comment = ({
               className="inputContainer__input"
               autoFocus
               onChange={(e) => setInput(e.target.value)}
+            />
+               <input
+              type="text"
+              className="inputContainer__input"
+              autoFocus
+              onChange={(e) => setContent(e.target.value)}
             />
             <Action className="reply" type="REPLY" handleClick={onAddComment} />
             <Action
