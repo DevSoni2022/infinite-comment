@@ -24,6 +24,8 @@ const useNode = () => {
     };
   
     const editNode = (tree, commentId, value) => {
+
+      debugger
       if (tree.id === commentId) {
         tree.name = value;
         return tree;

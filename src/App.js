@@ -21,6 +21,7 @@ const App = () => {
   };
 
   const handleEditNode = (folderId, value) => {
+    debugger
     const finalStructure = editNode(commentsData, folderId, value);
     setCommentsData(finalStructure);
   };
